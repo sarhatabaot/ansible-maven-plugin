@@ -12,73 +12,73 @@ import java.util.List;
 /**
  * Goal to set up a remote copy of ansible on each managed node
  */
-@Mojo( name = "pull", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST, requiresProject = false )
+@Mojo(name = "pull", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST, requiresProject = false)
 public class Pull extends AbstractAnsibleMojo {
 
     /**
      * The executable to use for this execution, defaults to <b>ansible-playbook</b>
      */
-    @Parameter( defaultValue = "ansible-pull", required = true, property = "ansible.executable" )
+    @Parameter(defaultValue = "ansible-pull", required = true, property = "ansible.executable")
     private String executable;
 
     /**
      * The branch, tag or commit to checkout
      */
-    @Parameter( property = "ansible.checkout" )
+    @Parameter(property = "ansible.checkout")
     private String checkout;
 
     /**
      * The directory to checkout repository to
      */
-    @Parameter( property = "ansible.directory" )
+    @Parameter(property = "ansible.directory")
     private String directory;
 
     /**
      * Additional variables as key=value or YAML/JSON
      */
-    @Parameter( property = "ansible.extraVars" )
+    @Parameter(property = "ansible.extraVars")
     private String extraVars;
 
     /**
      * Run the playbook even if the repository could not be updated, defaults to false
      */
-    @Parameter( property = "ansible.force", defaultValue = "false" )
+    @Parameter(property = "ansible.force", defaultValue = "false")
     private boolean force;
 
     /**
      * Module name used to check out repository
      */
-    @Parameter( property = "ansible.moduleName" )
+    @Parameter(property = "ansible.moduleName")
     private String moduleName;
 
     /**
      * Only run the playbook if the repository has been updated, defaults to false
      */
-    @Parameter( property = "ansible.onlyIfChanged", defaultValue = "false" )
+    @Parameter(property = "ansible.onlyIfChanged", defaultValue = "false")
     private boolean onlyIfChanged;
 
     /**
      * Purge checkout after playbook run, defaults to false
      */
-    @Parameter( property = "ansible.purge", defaultValue = "false" )
+    @Parameter(property = "ansible.purge", defaultValue = "false")
     private boolean purge;
 
     /**
      * Sleep for a random interval upto this number of seconds
      */
-    @Parameter( property = "ansible.sleep" )
+    @Parameter(property = "ansible.sleep")
     private Integer sleep;
 
     /**
      * URL of the playbook repository
      */
-    @Parameter( property = "ansible.url" )
+    @Parameter(property = "ansible.url")
     private String url;
 
     /**
      * The playbook to run, defaults to <b>playbook.yml</b>
      */
-    @Parameter( property = "ansible.playbook" )
+    @Parameter(property = "ansible.playbook")
     private String playbook;
 
     @Override

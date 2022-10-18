@@ -9,27 +9,25 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 /**
  * Goal that runs an Ansible playbook
- *
  */
-@Mojo( name = "playbook", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST, requiresProject = false )
-public class Playbook extends AbstractAnsibleMojo
-{
+@Mojo(name = "playbook", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST, requiresProject = false)
+public class Playbook extends AbstractAnsibleMojo {
     /**
      * The executable to use for this execution, defaults to <b>ansible-playbook</b>
      */
-    @Parameter( defaultValue = "ansible-playbook", required = true, property = "ansible.executable" )
+    @Parameter(defaultValue = "ansible-playbook", required = true, property = "ansible.executable")
     private String executable;
 
     /**
      * Additional variables as key=value or YAML/JSON
      */
-    @Parameter( property = "ansible.extraVars" )
+    @Parameter(property = "ansible.extraVars")
     private List<String> extraVars;
 
     /**
      * Only run plays and tasks whose tags do not match these values
      */
-    @Parameter( property = "ansible.skipTags" )
+    @Parameter(property = "ansible.skipTags")
     private String skipTags;
 
     /**
@@ -41,19 +39,19 @@ public class Playbook extends AbstractAnsibleMojo
     /**
      * Start the playbook at the task matching this name
      */
-    @Parameter( property = "ansible.startAtTask" )
+    @Parameter(property = "ansible.startAtTask")
     private String startAtTask;
 
     /**
      * Only run plays and tasks tagged with these values
      */
-    @Parameter( property = "ansible.tags" )
+    @Parameter(property = "ansible.tags")
     private String tags;
 
     /**
      * The playbook to run, defaults to <b>playbook.yml</b>
      */
-    @Parameter( defaultValue = "playbook.yml", required = true, property = "ansible.playbook" )
+    @Parameter(defaultValue = "playbook.yml", required = true, property = "ansible.playbook")
     private String playbook;
 
     @Override
