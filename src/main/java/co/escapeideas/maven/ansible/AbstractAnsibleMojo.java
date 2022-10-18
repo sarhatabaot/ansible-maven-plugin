@@ -19,7 +19,7 @@ import java.util.List;
 public abstract class AbstractAnsibleMojo extends AbstractMojo {
 
     private static final String NEW_LINE_SEPARATOR = System.getProperty("line.separator");
-    ;
+    
     private static final String STDERR_LOG = "stderr.log";
     private static final String STDOUT_LOG = "stdout.log";
     private final int BUFFER_SIZE = getBufferSize();
@@ -273,7 +273,7 @@ public abstract class AbstractAnsibleMojo extends AbstractMojo {
      */
     protected List<String> createOption(final String option, final Object value) {
         if (value == null) {
-            return new ArrayList<String>();
+            return new ArrayList<>();
         }
         return Arrays.asList(option, String.valueOf(value));
     }
